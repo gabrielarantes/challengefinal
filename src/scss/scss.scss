@@ -1,0 +1,350 @@
+@import "consts";
+@import "animations";
+@import "colors";
+@import "mediaQueries";
+
+body{
+    @extend .font-lato;
+    background : map-get($colors, white);
+    overflow-x : hidden;
+}
+
+header{
+
+    border-bottom: 1px solid #aaa;
+
+    .header--logo{
+        padding: 5px;
+        position: absolute;
+        left: 0;
+        top: 0; 
+
+        @extend .slide-bottom;
+        @include bp-992{
+            position: relative;
+            display:block;
+            margin : 0 auto;
+            width : 55px;
+            height : 55px;
+        }      
+       
+    }
+
+    .header--list{
+        list-style: none;
+        margin: 0;
+
+        @include bp-992{
+            display:none;
+        }
+
+        .header--list-item{
+            float: left;
+            a{
+                text-transform: uppercase;
+                padding: 5px 15px;
+                line-height: 55px;
+                text-decoration: none;
+                color: #010100;
+                border-radius: 15px;
+                border:1px solid #FFF;
+
+                
+
+                -webkit-transition: .3s;
+                -moz-transition: .3s;
+                -o-transition: .3s;
+                transition: .3s;
+
+                // &:hover{
+                //     color: #FFF;
+
+                //     &.politics{
+                //         border:1px solid #D0011B;
+                //         background: #D0011B;
+                //     }
+
+                //     &.business{
+                //         border:1px solid #BD10E0;
+                //         background: #BD10E0;
+                //     }
+
+                //     &.tech{
+                //         border:1px solid #4A90E2;
+                //         background: #4A90E2;
+                //     }
+
+                //     &.science{
+                //         border:1px solid #7CBB37;
+                //         background: #7CBB37;
+                //     }
+
+                //     &.sports{
+                //         border:1px solid #F5A623;
+                //         background: #F5A623;
+                //     }
+
+                //     &.login{
+                //         border-radius: 0;
+                //         &:hover{
+                //             background : #4990E2;
+                //         }
+                //     }
+                    
+                // }
+            }
+        }
+    }
+
+    #menu-mobile{
+        display : none;
+        @extend .pabsolute;
+        top : 15px;
+        left : 10px;
+        //border : 1px solid red;
+        background : url('../imgs/menu.png') no-repeat center center;
+        background-size : 100%;
+        width  : 32px;
+        height : 32px;
+        cursor : pointer;
+        z-index : 10;
+
+        @include bp-992{
+            display : block;
+        }
+
+    }
+
+    #menu-overlay{
+        display : none;
+        width : 100%;
+        height : 1000vh;
+        background : map-get($colors, white);
+        @extend .pabsolute;
+        top : 56px;
+        left : 0;
+        z-index : 20;
+
+        ul{
+            list-style : none;
+                @extend .nopadding;
+                @extend .nomargin;
+                background : map-get($colors, white);
+                .header--list-item{
+                    a{
+                        text-transform: uppercase;
+                        padding: 5px 15px;
+                        line-height: 55px;
+                        text-decoration: none;
+                        color: #010100;
+                        border-radius: 15px;
+                        border:1px solid #FFF;
+
+                        -webkit-transition: .3s;
+                        -moz-transition: .3s;
+                        -o-transition: .3s;
+                        transition: .3s;
+
+                        // &:hover{
+                        //     color: #FFF;
+
+                        //     &.politics{
+                        //         border:1px solid #D0011B;
+                        //         background: #D0011B;
+                        //     }
+
+                        //     &.business{
+                        //         border:1px solid #BD10E0;
+                        //         background: #BD10E0;
+                        //     }
+
+                        //     &.tech{
+                        //         border:1px solid #4A90E2;
+                        //         background: #4A90E2;
+                        //     }
+
+                        //     &.science{
+                        //         border:1px solid #7CBB37;
+                        //         background: #7CBB37;
+                        //     }
+
+                        //     &.sports{
+                        //         border:1px solid #F5A623;
+                        //         background: #F5A623;
+                        //     }
+
+                        //     &.login{
+                        //         border-radius: 0;
+                        //         &:hover{
+                        //             background : #4990E2;
+                        //         }
+                        //     }
+                            
+                        // }
+                    }
+                }
+        }
+
+    }
+
+}
+
+section#login{
+
+    div.container{
+        @extend .scale-in-center;
+
+        form{
+            max-width: 241px;
+            @extend .wrapper;
+
+            h1{
+                @extend .wrapper;
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 24px;
+                line-height: 29px;
+                color : map-get($colors , gray3E  );
+                padding: 50px 0;
+            }
+
+            label{
+                font-size: 14px;
+                color : map-get($colors , gray3E  );
+                text-transform: uppercase;
+                line-height: 17px;
+                @extend .font-lato;
+            }
+
+            .input{
+                border-radius: 0;
+                @extend .font-lato;
+                font-size: 14px;
+            }
+
+            button{
+                width : 100%;
+                border-radius: 0;
+            }
+            
+
+            .form-group{
+                @extend .nopadding;
+            }
+
+        }
+    }
+}
+
+section#content{
+    padding: 50px 0;
+
+    //@extend .scale-in-center;
+
+    .row{
+        padding: 60px 0;
+
+        @extend .nomargin;
+        &.wbb{
+            border-bottom: 1px solid map-get($colors, grayE4);
+            @include bp-992{
+                padding: 0;
+                border-bottom: 0;
+            }
+        }
+
+        .content--news{
+
+            @include bp-992{
+                padding-bottom: 70px;
+            }
+
+            .content--category{
+                font-size : 10px;
+                line-height: 12px;
+                text-transform: uppercase;
+            }
+
+            .content--category-politics{
+                color : map-get($colors, redD0);
+            }
+
+            .content--category-business{
+                color : map-get($colors, pinkBD);
+            }
+
+            .content--category-tech{
+                color : map-get($colors, blue4A);
+            }
+
+            .content--category-science{
+                color : map-get($colors, green7C);
+            }
+
+            .content--category-sports{
+                color : map-get($colors, goldf5);
+            }
+        
+            figure{
+                @extend .prelative;
+                img{
+                    width: 100%;
+                }
+            }
+        
+            .content--title{
+                font-size: 17px;
+                line-height: 19px;
+                color: map-get($colors , black );
+                display: block;
+                margin: 20px 0 15px 0;
+                @extend .nodecoration;
+            }
+        
+            .content--author_thumb{
+                max-width: 32px;
+                border: 1px solid map-get($colors, grayE4);
+                margin-right: 10px;
+            }
+        
+            .content--author_name{
+                font-size: 13px;
+                line-height: 18px;
+                font-style: italic;
+                color: map-get($colors, gray80);
+                @extend .font-open;
+            }
+        
+            .content--text{
+                font-size : 14px;
+                line-height: 19px;
+                margin: 10px 0;
+                color: map-get($colors, gray80);
+            }
+        }
+
+        .content--news-highlight{
+            @extend .slide-left;
+            .content--title{
+                font-size : 29px;
+                line-height : 35px;
+                @include bp-320{
+                    font-size : 17px !important;
+                    line-height : 19px !important ;
+                }
+            }
+            
+        }
+
+        .content--news-seconds{
+            @extend .slide-right;
+        }
+
+        .content--news-simple{
+            @extend .slide-top;
+        }       
+
+
+    }
+
+}

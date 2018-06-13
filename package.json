@@ -1,0 +1,37 @@
+{
+  "name": "challenge",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://gabrielarantes.github.io/challenge_final",
+  "dependencies": {
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.24.4",
+    "del": "^3.0.0",
+    "gh-pages": "^1.0.0",
+    "gulp": "3.9.1",
+    "gulp-babel": "*",
+    "gulp-clean-css": "*",
+    "gulp-concat": "*",
+    "gulp-less": "*",
+    "gulp-plumber": "*",
+    "gulp-rename": "*",
+    "gulp-sass": "*",
+    "gulp-uglify": "*",
+    "jshint": "^2.9.5",
+    "jshint-stylish": "^2.2.1"
+  }
+}
